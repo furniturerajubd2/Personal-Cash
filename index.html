@@ -199,10 +199,125 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .stat .v{font-size:14px}
 }
 
+
+/* Cash type buttons and tighter phone form */
+.cashSwitch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:7px 0 4px}
+.cashSwitch button{margin:0;min-height:42px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(212,175,55,.14);box-shadow:none;color:var(--text)}
+.cashSwitch button.active{background:linear-gradient(135deg,#b8860b,#d4af37);color:#fff;border-color:rgba(245,196,81,.55);box-shadow:0 10px 20px rgba(212,175,55,.16)}
+.pcTypeSelect{display:none}
+@media (max-width:760px){
+  .cashSwitch{gap:6px;margin:5px 0 3px}
+  .cashSwitch button{min-height:36px;border-radius:10px;font-size:13px;padding:7px 8px}
+  .personalFormGrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .personalFormGrid .wide{grid-column:1 / -1}
+  .personalFormGrid label{margin-top:3px}
+  .personalFormGrid textarea{min-height:44px}
+  .personalFormGrid button{grid-column:1 / -1;margin-top:2px}
+  .pcStatsCompact{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px!important}
+  .pcStatsCompact .stat{padding:6px 4px;text-align:center}
+  .pcStatsCompact .stat .small{font-size:8px}
+  .pcStatsCompact .stat .v{font-size:12px}
+}
+@media (max-width:390px){
+  .pcStatsCompact .stat .v{font-size:11px}
+  .pcStatsCompact .stat .small{font-size:7.5px}
+}
+
+
+/* Finance app mobile theme */
+body.financeTheme{background:#f7f8fd;color:#171b2f}
+body.financeTheme .topbar{background:#f7f8fd;border:none;box-shadow:none;color:#171b2f}
+body.financeTheme .brand img{display:none}
+body.financeTheme .brand h1{color:#171b2f;font-weight:900}
+body.financeTheme .brand p{color:#767b91}
+body.financeTheme .wrap{max-width:560px}
+body.financeTheme .card{background:#fff;border:1px solid rgba(31,35,62,.06);box-shadow:0 14px 36px rgba(37,43,76,.10);color:#171b2f}
+body.financeTheme h2,body.financeTheme h3{color:#171b2f}
+body.financeTheme .small,body.financeTheme label{color:#767b91}
+body.financeTheme input,body.financeTheme textarea,body.financeTheme select{background:#f6f7fb;border:1px solid #eef0f7;color:#171b2f;box-shadow:none}
+body.financeTheme input::placeholder,body.financeTheme textarea::placeholder{color:#a4a8b8}
+body.financeTheme button{box-shadow:none}
+body.financeTheme button.secondary{background:#f6f7fb;color:#6f55f2;border:1px solid #eef0f7}
+body.financeTheme .invoiceShell,body.financeTheme .invoiceShell.recentHidden{display:grid;grid-template-columns:1fr;gap:16px}
+.financeHero{position:relative;overflow:hidden;border-radius:26px;padding:24px 22px 0;background:linear-gradient(135deg,#7d5cff,#6547ed);color:#fff;box-shadow:0 18px 34px rgba(101,71,237,.28)}
+.financeHero:before{content:"";position:absolute;right:-24px;top:36px;width:190px;height:140px;border:8px solid rgba(255,255,255,.16);border-radius:28px;transform:rotate(-14deg)}
+.financeHero:after{content:"";position:absolute;right:28px;top:74px;width:130px;height:96px;border:8px solid rgba(255,255,255,.16);border-radius:24px;background:rgba(255,255,255,.08)}
+.financeHeroLabel{position:relative;z-index:1;font-size:15px;font-weight:800;opacity:.92}
+.financeHeroBalance{position:relative;z-index:1;margin-top:10px;font-size:42px;line-height:1;font-weight:900;letter-spacing:-.02em}
+.financeHeroMeta{position:relative;z-index:1;margin-top:12px;font-size:14px;opacity:.82}
+.financeHeroActions{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;margin:24px -22px 0;border-top:1px solid rgba(255,255,255,.22)}
+.financeHeroActions button{margin:0;border:0;border-radius:0;background:transparent;color:#fff;min-height:58px;font-size:16px;font-weight:850}
+.financeHeroActions button+button{border-left:1px solid rgba(255,255,255,.22)}
+.financeTiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.financeTile{background:#fff;border-radius:20px;padding:14px 8px;text-align:center;box-shadow:0 12px 26px rgba(37,43,76,.09);border:1px solid rgba(31,35,62,.06)}
+.financeIcon{width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 9px;font-size:20px;font-weight:900}
+.financeIcon.in{background:#daf7e7;color:#29b765}.financeIcon.out{background:#ffe1ea;color:#e63d69}.financeIcon.bal{background:#e3f0ff;color:#2d8cff}.financeIcon.count{background:#fff0d8;color:#f29a00}
+.financeTileLabel{font-size:12px;color:#767b91;font-weight:700}
+.financeTileValue{font-size:14px;font-weight:900;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.financeTileValue.in{color:#29b765}.financeTileValue.out{color:#e63d69}.financeTileValue.bal{color:#2d8cff}.financeTileValue.count{color:#f29a00}
+.financeEntry{padding:16px;border-radius:22px}
+.financeEntryHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.financeEntryHead h2{font-size:18px;margin:0}
+.financeEntry .cashSwitch{margin:0 0 10px}
+.financeEntry .cashSwitch button{background:#f6f7fb;border:1px solid #eef0f7;color:#767b91}
+.financeEntry .cashSwitch button.active{background:#6f55f2;color:#fff;border-color:#6f55f2;box-shadow:0 10px 18px rgba(111,85,242,.22)}
+.financeEntry .personalFormGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.financeEntry .personalFormGrid .wide{grid-column:1 / -1}
+.financeEntry label{font-size:11px;font-weight:800;margin:0 0 4px}
+.financeEntry input,.financeEntry textarea{min-height:42px;border-radius:13px;padding:9px 11px}
+.financeEntry textarea{min-height:48px}
+.financeEntry button:not(.cashSwitch button){grid-column:1 / -1;background:#6f55f2;border-radius:15px;margin-top:0;min-height:44px}
+.financeRecent{border-radius:22px;padding:16px}
+.financeRecent .recentDockHead h2{font-size:18px;color:#171b2f}
+body.financeTheme .recentItem{background:#fff;border:none;box-shadow:none;border-radius:14px}
+body.financeTheme .recentSummary{grid-template-columns:44px minmax(0,1fr) auto;padding:8px 0}
+body.financeTheme .recentSl{background:#daf7e7;color:#29b765;border-radius:999px}
+body.financeTheme .recentName{color:#171b2f}
+body.financeTheme .recentMeta{color:#767b91}
+body.financeTheme .cashTypeOut+.noop{display:none}
+body.financeTheme .note{background:#f6f7fb;border-color:#eef0f7;color:#767b91}
+@media (max-width:760px){
+  body.financeTheme{background:#f7f8fd}
+  body.financeTheme .topbar{padding:calc(18px + env(safe-area-inset-top)) 20px 8px}
+  body.financeTheme .brand h1{font-size:28px;white-space:normal;line-height:1.08}
+  body.financeTheme .brand p{font-size:16px;margin-top:6px}
+  body.financeTheme .wrap{padding:14px 16px calc(24px + env(safe-area-inset-bottom))}
+  .financeHero{border-radius:24px;padding:22px 20px 0}
+  .financeHeroBalance{font-size:40px}
+  .financeHeroActions{margin:22px -20px 0}
+  .financeHeroActions button{min-height:54px}
+  .financeTiles{gap:10px}
+  .financeTile{border-radius:18px;padding:12px 6px}
+  .financeIcon{width:38px;height:38px;border-radius:13px;margin-bottom:7px}
+  .financeTileLabel{font-size:11px}
+  .financeTileValue{font-size:12px}
+}
+@media (max-width:390px){
+  body.financeTheme .brand h1{font-size:24px}
+  body.financeTheme .brand p{font-size:14px}
+  .financeHeroBalance{font-size:34px}
+  .financeHero{padding:19px 17px 0}
+  .financeHeroActions{margin:18px -17px 0}
+  .financeHeroActions button{font-size:14px;min-height:48px}
+  .financeTiles{gap:8px}
+  .financeTile{padding:10px 4px}
+  .financeTileValue{font-size:11px}
+  .financeEntry{padding:13px}
+}
+
+
+/* Finance polish */
+.financeHome{display:grid;gap:16px}
+body.financeTheme .green{color:#29b765}
+body.financeTheme .red{color:#e63d69}
+body.financeTheme .recentSl.out{background:#ffe1ea;color:#e63d69}
+body.financeTheme .recentSl.in{background:#daf7e7;color:#29b765}
+@media (max-width:760px){.financeHome{gap:14px}}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-<body>
+<body class="financeTheme">
 <div id="app"></div>
 <div id="modalBg" class="modalBg"><div id="modal" class="modal"></div></div>
 
@@ -267,7 +382,7 @@ if (brandSettingsUpdated) localStorage.setItem(KEY, JSON.stringify(DB));
 let currentPage = "personal";
 let editSaleId = null, editChallanId = null, editReceiptId = null, editExpenseId = null, editSupplierId = null, editPaymentId = null, editPersonalCashId = null;
 let headerMenuOpen = false;
-let recentVisibility = { invoice: true, challan: true, receipt: true, supplier: true, expense: true, personal: false };
+let recentVisibility = { invoice: true, challan: true, receipt: true, supplier: true, expense: true, personal: true };
 let openRecentIds = { invoice: null, challan: null, receipt: null, supplier: null, expense: null, personal: null };
 let recentListMode = { invoice: "recent", challan: "recent", receipt: "recent", supplier: "recent", expense: "recent", personal: "recent" };
 let dashboardTab = "customer";
@@ -2027,6 +2142,11 @@ function printExpenseEntry(id) {
   body += '<h1>EXPENSE ENTRY</h1><p><strong>ID:</strong> '+esc(e.id)+'</p><p><strong>Date:</strong> '+esc(e.date)+'</p><p><strong>Head:</strong> '+esc(e.head)+'</p><p><strong>Amount:</strong> '+money(e.amount)+'</p><p><strong>Notes:</strong> '+esc(e.notes || "-")+'</p>';
   printHTML("Expense", body);
 }
+function setPersonalCashType(type) {
+  const select = document.getElementById("pcType");
+  if(select) select.value = type || "cash_in";
+  updatePersonalCashLabels();
+}
 function updatePersonalCashLabels() {
   const type = ((document.getElementById("pcType") || {}).value || "cash_in");
   const sourceLabel = document.getElementById("pcSourceLabel");
@@ -2034,13 +2154,17 @@ function updatePersonalCashLabels() {
   const sourceInput = document.getElementById("pcSource");
   const purposeInput = document.getElementById("pcPurpose");
   const typeHint = document.getElementById("pcTypeHint");
-  if(sourceLabel) sourceLabel.textContent = type === "cash_out" ? "Paid To / Expense Source" : "Received From / Source";
-  if(purposeLabel) purposeLabel.textContent = type === "cash_out" ? "Reason / Purpose" : "Cash In Details";
-  if(sourceInput) sourceInput.placeholder = type === "cash_out" ? "Kake dilen / kon khoroch e gelo" : "Kotha theke cash ashlo";
-  if(purposeInput) purposeInput.placeholder = type === "cash_out" ? "Example: Personal shopping / Family support" : "Example: Salary / Personal loan return";
+  const inBtn = document.getElementById("pcCashInBtn");
+  const outBtn = document.getElementById("pcCashOutBtn");
+  if(inBtn) inBtn.className = type === "cash_in" ? "active" : "";
+  if(outBtn) outBtn.className = type === "cash_out" ? "active" : "";
+  if(sourceLabel) sourceLabel.textContent = type === "cash_out" ? "Paid To" : "Received From";
+  if(purposeLabel) purposeLabel.textContent = type === "cash_out" ? "Purpose" : "Details";
+  if(sourceInput) sourceInput.placeholder = type === "cash_out" ? "Kake dilen" : "Kotha theke ashlo";
+  if(purposeInput) purposeInput.placeholder = type === "cash_out" ? "Shopping / family / other" : "Salary / loan return / other";
   if(typeHint) typeHint.innerHTML = type === "cash_out"
-    ? 'Ei page personal khoroch alada kore rakhbe. Main expense page er sathe mix hobe na.'
-    : 'Ei page personal cash in alada kore rakhbe. Main receipt page er sathe mix hobe na.';
+    ? 'Personal khoroch alada thakbe.'
+    : 'Personal cash in alada thakbe.';
 }
 function savePersonalCash() {
   const id = editPersonalCashId || makeDocId("PC", DB.personalCash);
@@ -2391,50 +2515,54 @@ function sidebarView() {
 }
 function invoicePage() {
   const recentVisible = isRecentVisible("invoice");
-  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Invoices</h2><div class="small">'+DB.sales.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'invoice\')">'+(recentVisible ? 'Hide' : 'Show')+'</button></div>'+recentInvoiceListView()+'</div>';
-  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Invoice</h2><div class="actions"><span class="pill">Main Page</span><button class="secondary small" onclick="toggleRecentPanel(\'invoice\')">'+(recentVisible ? 'Hide Recent' : 'Show Recent')+'</button></div></div><label>Date</label><input id="saleDate" type="date" value="'+today()+'"><label>Customer Name</label><input id="custName" placeholder="Customer name"><div class="row"><div><label>Phone Number</label><input id="custPhone" placeholder="Phone number"></div><div><label>Delivery Date</label><input id="saleDeliveryDate" type="date" value="'+today()+'"></div></div><label>Address</label><input id="custAddress" placeholder="Customer address"><label>Invoice Items</label><table><thead><tr><th>Description</th><th>Qty</th><th>Total</th><th>Action</th></tr></thead><tbody id="invoiceItems">'+invoiceItemRowHtml({ description: "", qty: 1, total: 0 })+'</tbody></table><button type="button" class="secondary small" onclick="addInvoiceItemRow()">+ Add Item</button><div class="row"><div><label>Total Sale</label><input id="saleTotal" type="number" value="0" readonly></div><div><label style="display:flex;align-items:center;gap:8px"><input id="saleDiscountToggle" type="checkbox" style="width:auto" onchange="toggleInvoiceDiscount()"> Use Discount</label><div id="saleDiscountWrap" style="display:none;margin-top:8px"><input id="saleDiscount" type="number" value="0" oninput="recalcInvoiceForm()" placeholder="Discount amount"></div></div></div><div class="row"><div><label>Advance</label><input id="paidAmount" type="number" value="0" oninput="recalcInvoiceForm()"></div><div><label>Due Amount</label><input id="saleDue" type="number" value="0" readonly></div></div><label>Notes</label><textarea id="saleNotes"></textarea><button onclick="saveSale()">'+(editSaleId?"Update Invoice":"Save Invoice")+'</button></div>';
+  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Invoices</h2><div class="small">'+DB.sales.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'invoice\')">Recent</button></div>'+recentInvoiceListView()+'</div>';
+  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Invoice</h2><div class="actions"><span class="pill">Main Page</span><button class="secondary small" onclick="toggleRecentPanel(\'invoice\')">Recent</button></div></div><label>Date</label><input id="saleDate" type="date" value="'+today()+'"><label>Customer Name</label><input id="custName" placeholder="Customer name"><div class="row"><div><label>Phone Number</label><input id="custPhone" placeholder="Phone number"></div><div><label>Delivery Date</label><input id="saleDeliveryDate" type="date" value="'+today()+'"></div></div><label>Address</label><input id="custAddress" placeholder="Customer address"><label>Invoice Items</label><table><thead><tr><th>Description</th><th>Qty</th><th>Total</th><th>Action</th></tr></thead><tbody id="invoiceItems">'+invoiceItemRowHtml({ description: "", qty: 1, total: 0 })+'</tbody></table><button type="button" class="secondary small" onclick="addInvoiceItemRow()">+ Add Item</button><div class="row"><div><label>Total Sale</label><input id="saleTotal" type="number" value="0" readonly></div><div><label style="display:flex;align-items:center;gap:8px"><input id="saleDiscountToggle" type="checkbox" style="width:auto" onchange="toggleInvoiceDiscount()"> Use Discount</label><div id="saleDiscountWrap" style="display:none;margin-top:8px"><input id="saleDiscount" type="number" value="0" oninput="recalcInvoiceForm()" placeholder="Discount amount"></div></div></div><div class="row"><div><label>Advance</label><input id="paidAmount" type="number" value="0" oninput="recalcInvoiceForm()"></div><div><label>Due Amount</label><input id="saleDue" type="number" value="0" readonly></div></div><label>Notes</label><textarea id="saleNotes"></textarea><button onclick="saveSale()">'+(editSaleId?"Update Invoice":"Save Invoice")+'</button></div>';
   return '<div class="invoiceShell '+(recentVisible ? '' : 'recentHidden')+'">' + formCard + (recentVisible ? recentCard : '') + '</div>';
 }
 function challanPage() {
   const recentVisible = isRecentVisible("challan");
-  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Challan</h2><div class="small">'+DB.challans.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'challan\')">'+(recentVisible ? 'Hide' : 'Show')+'</button></div>'+recentChallanListView()+'</div>';
-  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Challan</h2><div class="actions"><span class="pill">Delivery Copy</span><button class="secondary small" onclick="toggleRecentPanel(\'challan\')">'+(recentVisible ? 'Hide Recent' : 'Show Recent')+'</button></div></div><label>User ID</label><input id="chlInvoiceId" placeholder="Invoice ID or phone number" oninput="syncChallanInvoiceRef()"><div id="chlInvoiceHint" class="small" style="margin-top:6px">Invoice ID or phone number diye customer data link hobe.</div><label>Date</label><input id="chlDate" type="date" value="'+today()+'"><label>Customer Name</label><input id="chlCustomer" placeholder="Customer name"><div class="row"><div><label>Mobile</label><input id="chlMobile" placeholder="Mobile number"></div><div><label>Address</label><input id="chlAddress" placeholder="Customer address"></div></div><label>Challan Items</label><table><thead><tr><th>Description</th><th>Qty</th><th>Total</th><th>Action</th></tr></thead><tbody id="challanItems">'+challanItemRowHtml({ description: "", qty: 1, total: 0 })+'</tbody></table><button type="button" class="secondary small" onclick="addChallanItemRow()">+ Add Item</button><div class="row"><div><label>Transport</label><input id="chlTransport" type="number" value="0" oninput="recalcChallanForm()"></div><div><label>Grand Total</label><input id="chlGrandTotal" type="number" value="0" readonly></div></div><label>Notes</label><textarea id="chlNotes" placeholder="Optional delivery or item note"></textarea><button onclick="saveChallan()">'+(editChallanId?"Update Challan":"Save Challan")+'</button></div>';
+  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Challan</h2><div class="small">'+DB.challans.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'challan\')">Recent</button></div>'+recentChallanListView()+'</div>';
+  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Challan</h2><div class="actions"><span class="pill">Delivery Copy</span><button class="secondary small" onclick="toggleRecentPanel(\'challan\')">Recent</button></div></div><label>User ID</label><input id="chlInvoiceId" placeholder="Invoice ID or phone number" oninput="syncChallanInvoiceRef()"><div id="chlInvoiceHint" class="small" style="margin-top:6px">Invoice ID or phone number diye customer data link hobe.</div><label>Date</label><input id="chlDate" type="date" value="'+today()+'"><label>Customer Name</label><input id="chlCustomer" placeholder="Customer name"><div class="row"><div><label>Mobile</label><input id="chlMobile" placeholder="Mobile number"></div><div><label>Address</label><input id="chlAddress" placeholder="Customer address"></div></div><label>Challan Items</label><table><thead><tr><th>Description</th><th>Qty</th><th>Total</th><th>Action</th></tr></thead><tbody id="challanItems">'+challanItemRowHtml({ description: "", qty: 1, total: 0 })+'</tbody></table><button type="button" class="secondary small" onclick="addChallanItemRow()">+ Add Item</button><div class="row"><div><label>Transport</label><input id="chlTransport" type="number" value="0" oninput="recalcChallanForm()"></div><div><label>Grand Total</label><input id="chlGrandTotal" type="number" value="0" readonly></div></div><label>Notes</label><textarea id="chlNotes" placeholder="Optional delivery or item note"></textarea><button onclick="saveChallan()">'+(editChallanId?"Update Challan":"Save Challan")+'</button></div>';
   return '<div class="invoiceShell '+(recentVisible ? '' : 'recentHidden')+'">' + formCard + (recentVisible ? recentCard : '') + '</div>';
 }
 function receiptPage() {
   const recentVisible = isRecentVisible("receipt");
-  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Receipt</h2><div class="small">'+DB.receipts.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'receipt\')">'+(recentVisible ? 'Hide' : 'Show')+'</button></div>'+recentReceiptListView()+'</div>';
-  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Money Receipt</h2><div class="actions"><button class="secondary small" onclick="toggleRecentPanel(\'receipt\')">'+(recentVisible ? 'Hide Recent' : 'Show Recent')+'</button></div></div><label>User ID</label><input id="rcInvoiceId" placeholder="Invoice ID or phone number" oninput="syncReceiptInvoiceRef()"><div id="rcInvoiceHint" class="small" style="margin-top:6px">Invoice ID or phone number diye payment bind hobe.</div><label>Date</label><input id="rcDate" type="date" value="'+today()+'"><label>Customer Name</label><input id="rcName" placeholder="Customer name"><div class="row"><div><label>Current Due Amount</label><input id="rcDueAmount" type="number" value="0" readonly></div><div><label>Total Paid</label><input id="rcPaidTotal" type="number" value="0" readonly></div></div><label>Received Amount</label><input id="rcAmount" type="number" value="0" oninput="updateReceiptPreview()"><label>Purpose</label><input id="rcPurpose" placeholder="Advance / Full payment"><label>Notes</label><textarea id="rcNotes"></textarea><button onclick="saveReceipt()">'+(editReceiptId?"Update Receipt":"Save Receipt")+'</button></div>';
+  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Receipt</h2><div class="small">'+DB.receipts.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'receipt\')">Recent</button></div>'+recentReceiptListView()+'</div>';
+  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Money Receipt</h2><div class="actions"><button class="secondary small" onclick="toggleRecentPanel(\'receipt\')">Recent</button></div></div><label>User ID</label><input id="rcInvoiceId" placeholder="Invoice ID or phone number" oninput="syncReceiptInvoiceRef()"><div id="rcInvoiceHint" class="small" style="margin-top:6px">Invoice ID or phone number diye payment bind hobe.</div><label>Date</label><input id="rcDate" type="date" value="'+today()+'"><label>Customer Name</label><input id="rcName" placeholder="Customer name"><div class="row"><div><label>Current Due Amount</label><input id="rcDueAmount" type="number" value="0" readonly></div><div><label>Total Paid</label><input id="rcPaidTotal" type="number" value="0" readonly></div></div><label>Received Amount</label><input id="rcAmount" type="number" value="0" oninput="updateReceiptPreview()"><label>Purpose</label><input id="rcPurpose" placeholder="Advance / Full payment"><label>Notes</label><textarea id="rcNotes"></textarea><button onclick="saveReceipt()">'+(editReceiptId?"Update Receipt":"Save Receipt")+'</button></div>';
   return '<div class="invoiceShell '+(recentVisible ? '' : 'recentHidden')+'">' + formCard + (recentVisible ? recentCard : '') + '</div>';
 }
 function supplierPage() {
   const recentVisible = isRecentVisible("supplier");
-  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Supplier List</h2><div class="small">'+DB.supplierProjects.length+' projects</div></div><button class="secondary small" onclick="toggleRecentPanel(\'supplier\')">'+(recentVisible ? 'Hide' : 'Show')+'</button></div>'+recentSupplierListView()+'</div>';
-  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Supplier Hisab</h2><div class="actions"><button class="secondary small" onclick="toggleRecentPanel(\'supplier\')">'+(recentVisible ? 'Hide Recent' : 'Show Recent')+'</button></div></div><label>Order Date</label><input id="supDate" type="date" value="'+today()+'"><label>Delivery Date</label><input id="supDeliveryDate" type="date" value="'+today()+'"><label>Supplier Name</label><input id="supName" list="supplierNameList" placeholder="Supplier name"><datalist id="supplierNameList">'+supplierNameOptionsHtml()+'</datalist><div class="small" style="margin-top:6px">আগের supplier name type korlei suggest ashbe. Ek supplier-er under onek project alada alada save korte parben.</div><label>Project Name</label><input id="supProject" placeholder="Example: Bed Project - Karim Villa"><label>Item Details</label><table><thead><tr><th>Description</th><th>Qty</th><th>Total</th><th>Action</th></tr></thead><tbody id="supplierItems">'+supplierItemRowHtml({ description: "", qty: 1, total: 0 })+'</tbody></table><button type="button" class="secondary small" onclick="addSupplierItemRow()">+ Add Item</button><div class="row"><div><label>Total Project Amount</label><input id="supTotal" type="number" value="0" readonly></div><div><label>Advance Amount</label><input id="supAdvance" type="number" value="0"></div></div><label style="display:flex;align-items:center;gap:8px"><input id="supAutoTotal" type="checkbox" style="width:auto" checked onchange="toggleSupplierTotalMode()"> Auto Calculate Total</label><div class="small" style="margin-top:6px">Auto off korle total amount nijer moto edit korte parben.</div><label>Notes</label><textarea id="supNotes"></textarea><button onclick="saveSupplier()">'+(editSupplierId?"Update Supplier Project":"Save Supplier Project")+'</button></div>';
+  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Supplier List</h2><div class="small">'+DB.supplierProjects.length+' projects</div></div><button class="secondary small" onclick="toggleRecentPanel(\'supplier\')">Recent</button></div>'+recentSupplierListView()+'</div>';
+  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Supplier Hisab</h2><div class="actions"><button class="secondary small" onclick="toggleRecentPanel(\'supplier\')">Recent</button></div></div><label>Order Date</label><input id="supDate" type="date" value="'+today()+'"><label>Delivery Date</label><input id="supDeliveryDate" type="date" value="'+today()+'"><label>Supplier Name</label><input id="supName" list="supplierNameList" placeholder="Supplier name"><datalist id="supplierNameList">'+supplierNameOptionsHtml()+'</datalist><div class="small" style="margin-top:6px">আগের supplier name type korlei suggest ashbe. Ek supplier-er under onek project alada alada save korte parben.</div><label>Project Name</label><input id="supProject" placeholder="Example: Bed Project - Karim Villa"><label>Item Details</label><table><thead><tr><th>Description</th><th>Qty</th><th>Total</th><th>Action</th></tr></thead><tbody id="supplierItems">'+supplierItemRowHtml({ description: "", qty: 1, total: 0 })+'</tbody></table><button type="button" class="secondary small" onclick="addSupplierItemRow()">+ Add Item</button><div class="row"><div><label>Total Project Amount</label><input id="supTotal" type="number" value="0" readonly></div><div><label>Advance Amount</label><input id="supAdvance" type="number" value="0"></div></div><label style="display:flex;align-items:center;gap:8px"><input id="supAutoTotal" type="checkbox" style="width:auto" checked onchange="toggleSupplierTotalMode()"> Auto Calculate Total</label><div class="small" style="margin-top:6px">Auto off korle total amount nijer moto edit korte parben.</div><label>Notes</label><textarea id="supNotes"></textarea><button onclick="saveSupplier()">'+(editSupplierId?"Update Supplier Project":"Save Supplier Project")+'</button></div>';
   return '<div class="invoiceShell '+(recentVisible ? '' : 'recentHidden')+'">' + formCard + (recentVisible ? recentCard : '') + '</div>';
 }
 function expensePage() {
   const recentVisible = isRecentVisible("expense");
-  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Expense</h2><div class="small">'+DB.expenses.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'expense\')">'+(recentVisible ? 'Hide' : 'Show')+'</button></div>'+recentExpenseListView()+'</div>';
-  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Expense</h2><div class="actions"><button class="secondary small" onclick="toggleRecentPanel(\'expense\')">'+(recentVisible ? 'Hide Recent' : 'Show Recent')+'</button></div></div><label>Date</label><input id="expDate" type="date" value="'+today()+'"><label>Expense Head</label><input id="expHead" placeholder="Transport / Rent / Salary / Tea"><label>Amount</label><input id="expAmount" type="number" value="0"><label>Notes</label><textarea id="expNotes"></textarea><button onclick="saveExpense()">'+(editExpenseId?"Update Expense":"Save Expense")+'</button><div class="note">Supplier payment dashboard e expense hisebe count hocche.</div></div>';
+  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Expense</h2><div class="small">'+DB.expenses.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'expense\')">Recent</button></div>'+recentExpenseListView()+'</div>';
+  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Expense</h2><div class="actions"><button class="secondary small" onclick="toggleRecentPanel(\'expense\')">Recent</button></div></div><label>Date</label><input id="expDate" type="date" value="'+today()+'"><label>Expense Head</label><input id="expHead" placeholder="Transport / Rent / Salary / Tea"><label>Amount</label><input id="expAmount" type="number" value="0"><label>Notes</label><textarea id="expNotes"></textarea><button onclick="saveExpense()">'+(editExpenseId?"Update Expense":"Save Expense")+'</button><div class="note">Supplier payment dashboard e expense hisebe count hocche.</div></div>';
   return '<div class="invoiceShell '+(recentVisible ? '' : 'recentHidden')+'">' + formCard + (recentVisible ? recentCard : '') + '</div>';
 }
 function recentPersonalCashListView() {
   const items = recentSourceItems("personal", DB.personalCash);
-  if(!items.length) return recentModeButtons("personal") + '<div class="note">No personal cash entry yet.</div>';
+  if(!items.length) return '<div class="note">No transaction yet.</div>';
   function row(x, index) {
     const open = openRecentIds.personal === x.id;
-    return '<div class="recentItem"><div class="recentSummary" onclick="toggleRecentItem(\'personal\', \''+x.id+'\')"><div class="recentSl">' + String(index + 1).padStart(2, "0") + '</div><div><div class="recentName">' + esc(x.source || "Personal Cash") + '</div><div class="small" style="margin-top:4px">' + personalCashTypeLabel(x.type) + ' · ' + money(x.amount) + '</div></div><div class="recentArrow">' + (open ? '&#9650;' : '&#9660;') + '</div></div>' + (open ? '<div class="recentMeta"><p><strong>ID:</strong> ' + esc(x.id) + '</p><p><strong>Date:</strong> ' + esc(x.date || "-") + '</p><p><strong>Type:</strong> ' + personalCashTypeLabel(x.type) + '</p><p><strong>Amount:</strong> ' + money(x.amount) + '</p><p><strong>Source:</strong> ' + esc(x.source || "-") + '</p><p><strong>Purpose:</strong> ' + esc(x.purpose || "-") + '</p><div class="actions"><button class="secondary small" onclick="event.stopPropagation();openPersonalCash(\''+x.id+'\')">Open</button><button class="secondary small" onclick="event.stopPropagation();fillPersonalCash(\''+x.id+'\')">Edit</button><button class="danger small" onclick="event.stopPropagation();deletePersonalCash(\''+x.id+'\')">Delete</button></div></div>' : '') + '</div>';
+    const isOut = x.type === "cash_out";
+    const icon = isOut ? "↑" : "↓";
+    const amount = (isOut ? "-" : "+") + money(x.amount);
+    return '<div class="recentItem"><div class="recentSummary" onclick="toggleRecentItem(\'personal\', \''+x.id+'\')"><div class="recentSl '+(isOut ? 'out' : 'in')+'">' + icon + '</div><div><div class="recentName">' + esc(x.source || (isOut ? "Cash Out" : "Cash In")) + '</div><div class="small" style="margin-top:3px">' + esc(x.date || "-") + ' · ' + esc(x.purpose || personalCashTypeLabel(x.type)) + '</div></div><div class="'+(isOut ? 'red' : 'green')+'" style="font-weight:900;white-space:nowrap">' + amount + '</div></div>' + (open ? '<div class="recentMeta"><p><strong>ID:</strong> ' + esc(x.id) + '</p><p><strong>Notes:</strong> ' + esc(x.notes || "-") + '</p><div class="actions"><button class="secondary small" onclick="event.stopPropagation();fillPersonalCash(\''+x.id+'\')">Edit</button><button class="danger small" onclick="event.stopPropagation();deletePersonalCash(\''+x.id+'\')">Delete</button></div></div>' : '') + '</div>';
   }
-  const body = (recentListMode.personal || "recent") === "all" ? groupItemsByMonth(items, row) : items.map(row).join('');
-  return recentModeButtons("personal") + '<div class="recentCompact">' + body + '</div>';
+  return '<div class="recentCompact">' + items.map(row).join('') + '</div>';
 }
 function personalCashPage() {
   const recentVisible = isRecentVisible("personal");
   const summary = personalCashSummaryWithBalance();
-  const recentCard = '<div class="card recentDock"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Personal Cash</h2><div class="small">'+DB.personalCash.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'personal\')">'+(recentVisible ? 'Hide' : 'Show')+'</button></div>'+recentPersonalCashListView()+'</div>';
-  const formCard = '<div class="card invoiceMain"><div class="section-title"><h2>Personal Cash In / Cash Out</h2><div class="actions"><span class="pill">Separate From Main Accounts</span><button class="secondary small" onclick="toggleRecentPanel(\'personal\')">'+(recentVisible ? 'Hide Recent' : 'Show Recent')+'</button></div></div><div class="stats" style="margin-bottom:14px"><div class="stat"><div class="small">Total Cash In</div><div class="v">'+money(summary.totalIn)+'</div></div><div class="stat"><div class="small">Total Cash Out</div><div class="v">'+money(summary.totalOut)+'</div></div><div class="stat"><div class="small">Available Balance</div><div class="v">'+money(summary.balance)+'</div></div><div class="stat"><div class="small">Entry Count</div><div class="v">'+esc(DB.personalCash.length)+'</div></div></div><label>Date</label><input id="pcDate" type="date" value="'+today()+'"><div class="row"><div><label>Type</label><select id="pcType" onchange="updatePersonalCashLabels()"><option value="cash_in">Cash In</option><option value="cash_out">Cash Out</option></select></div><div><label>Amount</label><input id="pcAmount" type="number" value="0" placeholder="Amount"></div></div><label id="pcSourceLabel">Received From / Source</label><input id="pcSource" placeholder="Kotha theke cash ashlo"><label id="pcPurposeLabel">Cash In Details</label><input id="pcPurpose" placeholder="Example: Salary / Personal loan return"><label>Notes</label><textarea id="pcNotes"></textarea><button onclick="savePersonalCash()">'+(editPersonalCashId?"Update Entry":"Save Entry")+'</button><div id="pcTypeHint" class="note">Ei page personal cash in alada kore rakhbe. Main receipt page er sathe mix hobe na.</div></div>';
-  return '<div class="invoiceShell '+(recentVisible ? '' : 'recentHidden')+'">' + formCard + (recentVisible ? recentCard : '') + '</div>';
+  const recentCard = '<div class="card recentDock financeRecent"><div class="recentDockHead"><div><h2 style="margin-bottom:4px">Recent Transactions</h2><div class="small">'+DB.personalCash.length+' entries</div></div><button class="secondary small" onclick="toggleRecentPanel(\'personal\')">Recent</button></div>'+recentPersonalCashListView()+'</div>';
+  const hero = '<div class="financeHero"><div class="financeHeroLabel">Total Balance</div><div class="financeHeroBalance">'+money(summary.balance)+'</div><div class="financeHeroMeta">Cash In '+money(summary.totalIn)+' · Cash Out '+money(summary.totalOut)+'</div><div class="financeHeroActions"><button type="button" onclick="setPersonalCashType(\'cash_in\');document.getElementById(\'pcAmount\')?.focus()">+ Add Income</button><button type="button" onclick="setPersonalCashType(\'cash_out\');document.getElementById(\'pcAmount\')?.focus()">− Add Expense</button></div></div>';
+  const tiles = '<div class="financeTiles"><div class="financeTile"><div class="financeIcon in">↓</div><div class="financeTileLabel">Income</div><div class="financeTileValue in">'+money(summary.totalIn)+'</div></div><div class="financeTile"><div class="financeIcon out">↑</div><div class="financeTileLabel">Expense</div><div class="financeTileValue out">'+money(summary.totalOut)+'</div></div><div class="financeTile"><div class="financeIcon bal">▣</div><div class="financeTileLabel">Balance</div><div class="financeTileValue bal">'+money(summary.balance)+'</div></div><div class="financeTile"><div class="financeIcon count">○</div><div class="financeTileLabel">Count</div><div class="financeTileValue count">'+esc(DB.personalCash.length)+'</div></div></div>';
+  const formCard = '<div class="card financeEntry"><div class="financeEntryHead"><h2>New Entry</h2><button class="secondary small" onclick="toggleRecentPanel(\'personal\')">Recent</button></div><div class="cashSwitch"><button id="pcCashInBtn" type="button" onclick="setPersonalCashType(\'cash_in\')">Cash In</button><button id="pcCashOutBtn" type="button" onclick="setPersonalCashType(\'cash_out\')">Cash Out</button></div><select id="pcType" class="pcTypeSelect" onchange="updatePersonalCashLabels()"><option value="cash_in">Cash In</option><option value="cash_out">Cash Out</option></select><div class="personalFormGrid"><div><label>Date</label><input id="pcDate" type="date" value="'+today()+'"></div><div><label>Amount</label><input id="pcAmount" type="number" value="0" placeholder="Amount"></div><div class="wide"><label id="pcSourceLabel">Received From</label><input id="pcSource" placeholder="Kotha theke ashlo"></div><div class="wide"><label id="pcPurposeLabel">Details</label><input id="pcPurpose" placeholder="Salary / loan return / other"></div><div class="wide"><label>Notes</label><textarea id="pcNotes" placeholder="Optional"></textarea></div><button onclick="savePersonalCash()">'+(editPersonalCashId?"Update Entry":"Save Entry")+'</button></div><div id="pcTypeHint" class="note">Personal cash in alada thakbe.</div></div>';
+  return '<div class="financeHome">' + hero + tiles + formCard + recentCard + '</div>';
 }
 function dashboardPage() {
   const t = totals();
@@ -2479,7 +2607,7 @@ function mainView() {
 
   const launcher = "";
 
-  return '<div class="topbar"><div class="headerLeft"><div class="brand"><img src="'+(DB.settings.logo || DEFAULTS.logo)+'" alt="logo"><div><h1>Personal Cash</h1><p>'+esc(DB.settings.name)+' · '+esc(DB.settings.phone)+'</p></div></div></div></div><div class="wrap"><div class="content">'+content+'</div></div>';
+  return '<div class="topbar"><div class="headerLeft"><div class="brand"><img src="'+(DB.settings.logo || DEFAULTS.logo)+'" alt="logo"><div><h1>Good morning 👋</h1><p>Take control of your money</p></div></div></div></div><div class="wrap"><div class="content">'+content+'</div></div>';
 }
 function render() {
   document.getElementById("app").innerHTML = mainView();

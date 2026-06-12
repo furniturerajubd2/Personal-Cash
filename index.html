@@ -109,6 +109,96 @@ th,td{border-bottom:1px solid rgba(255,255,255,.08);padding:10px 8px;text-align:
 @media (max-width:980px){.invoiceShell,.invoiceShell.recentHidden{grid-template-columns:1fr}.headerMenu{left:0}.subnav{padding:10px 12px 0}.menuLauncher{padding:16px}.menuLauncherGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.menuCard{min-height:128px;padding:16px}}
 @media (max-width:620px){.menuLauncherHead{flex-direction:column;align-items:flex-start}.menuLauncherGrid{grid-template-columns:1fr}.menuCard{min-height:auto}}
 .green{color:#f5c451} .red{color:#ffb4a8}
+
+/* iPhone app polish */
+html{background:#050505;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-height:100vh;min-height:100dvh;overflow-x:hidden}
+input,textarea,select{font-size:16px;line-height:1.25}
+button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+@media (max-width:760px){
+  body{background:radial-gradient(circle at 20% 0,rgba(245,196,81,.16),transparent 24%),linear-gradient(180deg,#070707,#0f0d08 42%,#050505)}
+  .topbar{top:0;padding:calc(10px + env(safe-area-inset-top)) 14px 10px;border-bottom-color:rgba(245,196,81,.18);background:rgba(5,5,5,.88)}
+  .headerLeft{width:100%;min-width:0}
+  .brand{width:100%;min-width:0;gap:10px}
+  .brand img{width:42px;height:42px;border-radius:12px;flex:0 0 auto}
+  .brand h1{font-size:18px;line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand p{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:270px}
+  .wrap{padding:12px 10px calc(22px + env(safe-area-inset-bottom))}
+  .content{display:block}
+  .invoiceShell,.invoiceShell.recentHidden{display:grid;grid-template-columns:1fr;gap:12px}
+  .card{border-radius:18px;padding:13px;box-shadow:0 14px 34px rgba(0,0,0,.34)}
+  .section-title{align-items:flex-start;gap:8px;margin-bottom:12px}
+  .section-title h2{font-size:18px;line-height:1.15;margin:0}
+  .actions{gap:7px}
+  .pill{font-size:10px;padding:5px 8px;line-height:1.2}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:12px!important}
+  .stat{border-radius:14px;padding:10px;min-width:0}
+  .stat .small{font-size:10px;line-height:1.25}
+  .stat .v{font-size:18px;line-height:1.12;word-break:break-word}
+  label{font-size:12px;margin:9px 0 5px}
+  .row{display:grid;grid-template-columns:1fr;gap:0}
+  input,textarea,select{min-height:48px;border-radius:13px;padding:12px 13px;background:rgba(255,255,255,.09)}
+  textarea{min-height:86px}
+  button{min-height:48px;border-radius:13px;font-size:15px;margin-top:12px}
+  button.small{min-height:38px;padding:9px 11px;font-size:12px}
+  .note{font-size:11px;line-height:1.45;border-radius:13px;padding:10px}
+  .recentDock{padding:12px}
+  .recentDockHead h2{font-size:16px}
+  .recentSummary{grid-template-columns:38px minmax(0,1fr) 20px;padding:10px;gap:8px}
+  .recentSl{width:30px;height:30px;border-radius:9px}
+  .recentName{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .recentMeta{font-size:11px;line-height:1.45}
+  .recentMeta .actions button{flex:1 1 92px}
+  .login{margin:22px 10px;padding:18px;border-radius:18px}
+  .modalBg{padding:10px}
+  .modal{border-radius:18px;padding:14px;max-height:88dvh}
+}
+@media (max-width:390px){
+  .brand p{max-width:230px}
+  .stat .v{font-size:16px}
+  .section-title{flex-direction:column}
+  .actions button.small{flex:1 1 auto}
+}
+
+
+/* Compact iPhone layout */
+@media (max-width:760px){
+  .topbar{padding:calc(7px + env(safe-area-inset-top)) 10px 7px}
+  .brand img{width:34px;height:34px;border-radius:10px}
+  .brand h1{font-size:16px}
+  .brand p{font-size:10px;max-width:250px}
+  .wrap{padding:8px 7px calc(14px + env(safe-area-inset-bottom))}
+  .invoiceShell,.invoiceShell.recentHidden{gap:8px}
+  .card{padding:9px;border-radius:14px}
+  .section-title{margin-bottom:7px}
+  .section-title h2{font-size:16px}
+  .pill{display:none}
+  .stats{gap:6px;margin-bottom:8px!important}
+  .stat{padding:7px;border-radius:11px}
+  .stat .small{font-size:9px}
+  .stat .v{font-size:15px;margin-top:3px}
+  label{font-size:11px;margin:6px 0 4px}
+  input,textarea,select{min-height:40px;border-radius:10px;padding:9px 10px}
+  textarea{min-height:54px}
+  button{min-height:42px;border-radius:10px;font-size:14px;margin-top:8px;padding:9px 11px}
+  button.small{min-height:32px;padding:7px 9px;font-size:11px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .row>*{min-width:0}
+  #pcTypeHint{display:none}
+  .note{margin-top:7px;padding:7px 8px;font-size:10px}
+  .recentDock{padding:9px}
+  .recentDockHead{margin-bottom:7px}
+  .recentDockHead h2{font-size:14px;margin-bottom:2px!important}
+  .recentSummary{grid-template-columns:32px minmax(0,1fr) 18px;padding:8px;gap:7px}
+  .recentSl{width:26px;height:26px;border-radius:8px;font-size:10px}
+  .recentName{font-size:12px}
+  .recentMeta{padding:0 8px 8px;font-size:10px}
+}
+@media (max-width:390px){
+  .brand p{max-width:210px}
+  .stat .v{font-size:14px}
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -177,7 +267,7 @@ if (brandSettingsUpdated) localStorage.setItem(KEY, JSON.stringify(DB));
 let currentPage = "personal";
 let editSaleId = null, editChallanId = null, editReceiptId = null, editExpenseId = null, editSupplierId = null, editPaymentId = null, editPersonalCashId = null;
 let headerMenuOpen = false;
-let recentVisibility = { invoice: true, challan: true, receipt: true, supplier: true, expense: true, personal: true };
+let recentVisibility = { invoice: true, challan: true, receipt: true, supplier: true, expense: true, personal: false };
 let openRecentIds = { invoice: null, challan: null, receipt: null, supplier: null, expense: null, personal: null };
 let recentListMode = { invoice: "recent", challan: "recent", receipt: "recent", supplier: "recent", expense: "recent", personal: "recent" };
 let dashboardTab = "customer";
@@ -2389,7 +2479,7 @@ function mainView() {
 
   const launcher = "";
 
-  return '<div class="topbar"><div class="headerLeft"><div class="menuWrap"><button class="menuToggle" onclick="toggleHeaderMenu()"><span></span><span></span><span></span></button>'+(headerMenuOpen ? '<div class="headerMenu">'+menuButton("invoice","Invoice")+menuButton("challan","Challan")+menuButton("receipt","Money Receipt")+menuButton("supplier","Supplier Hisab")+menuButton("expense","Expense")+menuButton("personal","Personal Cash")+menuButton("dashboard","Dashboard")+menuButton("settings","Settings")+'<button class="menuBtn danger" onclick="logout()">Logout</button></div>' : '')+'</div><div class="brand"><img src="'+(DB.settings.logo || DEFAULTS.logo)+'" alt="logo"><div><h1>'+esc(DB.settings.name)+'</h1><p>'+esc(DB.settings.phone)+' · '+esc(DB.settings.address)+'</p></div></div></div><div class="headerActions"></div></div>'+launcher+'<div class="wrap"><div class="content">'+content+'</div></div>';
+  return '<div class="topbar"><div class="headerLeft"><div class="brand"><img src="'+(DB.settings.logo || DEFAULTS.logo)+'" alt="logo"><div><h1>Personal Cash</h1><p>'+esc(DB.settings.name)+' · '+esc(DB.settings.phone)+'</p></div></div></div></div><div class="wrap"><div class="content">'+content+'</div></div>';
 }
 function render() {
   document.getElementById("app").innerHTML = mainView();
